@@ -1,3 +1,3 @@
-from gptclass import GPTClass
+from gptclass.GPTClass import GPTClass
 
 __all__ = ["GPTClass"]

@@ -4,3 +4,4 @@ dist
 .vscode
 .venv
 .DS_Store
+notebooks

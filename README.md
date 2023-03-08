@@ -3,6 +3,9 @@
 
 [![version](https://img.shields.io/pypi/v/gptclass?logo=pypi&logoColor=white)](https://pypi.org/project/gptclass/)
 
+### How it works?
+It uses the method name and information about the parameters used to build the source code using ChatGPT and then execute it locally.
+
 ## Installation
 ```bash
 pip install gptclass
@@ -36,6 +39,13 @@ Adding explain before invoking the method will print the code:
 >>> gpt.explain.from_celsius_to_fahrenheit(25)
 def from_celsius_to_fahrenheit(celsius):
     return (celsius * 1.8) + 32
+
+>>> gpt.explain.factorial(15)
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
 ```
 
 ## Notes

@@ -28,6 +28,8 @@ def function_caller(name: str):
         code = function_writer(name, len(args))
         locals: dict[str, Any] = {}
         exec(code, globals(), locals)
+        for key, value in locals.items():
+            globals()[key] = value
         func = locals[name]
         return func(*args)
 

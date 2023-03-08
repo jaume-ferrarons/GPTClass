@@ -16,3 +16,8 @@ class GPTClassTest(unittest.TestCase):
         gpt = GPTClass()
         gpt.explain.add(4, 5)
         self.assertEqual(stdout.getvalue(), "def add(a, b):\n    return a + b\n")
+
+    def test_recursive_method(self):
+        gpt = GPTClass()
+        self.assertEqual(gpt.factorial(3), 6)
+        self.assertEqual(gpt.factorial(7), 5040)

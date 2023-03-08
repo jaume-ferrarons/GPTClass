@@ -18,21 +18,44 @@ def function_writer(name: str, n_parameters: int) -> str:
         },
     ]
     generated_code = chat_completion(conversation)
-    return generated_code
+    if "```python" in generated_code:
+        cleaned_code = generated_code.split("```python")[1].split("```")[0].strip()
+    return cleaned_code
 
 
-def function_builder(name: str):
+def function_caller(name: str):
     def f(*args):
         code = function_writer(name, len(args))
-        cleaned_code = code.replace("```python", "").replace("```", "").strip()
         locals: dict[str, Any] = {}
-        exec(cleaned_code, globals(), locals)
+        exec(code, globals(), locals)
         func = locals[name]
         return func(*args)
 
     return f
 
 
-class GPTClass:
+def function_explainer(name: str):
+    def f(*args):
+        print(function_writer(name, len(args)))
+
+    return f
+
+
+class Explainer:
     def __getattr__(self, name: str):
-        return function_builder(name)
+        return function_explainer(name)
+
+
+class GPTClass:
+    @property
+    def explain(self):
+        """Prints the code of the generated method
+        Example: `GPTClass().explain.add(4, 5)`
+
+        :return: None
+        :rtype: None
+        """
+        return Explainer()
+
+    def __getattr__(self, name: str):
+        return function_caller(name)

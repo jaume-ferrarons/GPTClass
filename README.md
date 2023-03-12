@@ -1,5 +1,5 @@
 # GPTClass
-**GPTClass** is a Python class that uses OpenAI's GPT to generated the code that does what you need with minimal information.
+**GPTClass** is a Python class that uses OpenAI's GPT to generate the code that does what you need with minimal information.
 
 [![version](https://img.shields.io/pypi/v/gptclass?logo=pypi&logoColor=white)](https://pypi.org/project/gptclass/)
 [![codecov](https://codecov.io/gh/jaume-ferrarons/GPTClass/branch/main/graph/badge.svg?token=IDN30YYHQ8)](https://codecov.io/gh/jaume-ferrarons/GPTClass)

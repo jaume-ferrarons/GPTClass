@@ -4,7 +4,7 @@
 [![version](https://img.shields.io/pypi/v/gptclass?logo=pypi&logoColor=white)](https://pypi.org/project/gptclass/)
 
 ### How it works?
-It uses the method name and information about the parameters used to build the source code using ChatGPT and then execute it locally.
+It uses the method's name and information about the parameters used to build the source code using ChatGPT and then executes it locally.
 
 ## Installation
 ```bash
@@ -30,6 +30,8 @@ Do whatever you need:
 10
 >>> gpt.from_celsius_to_fahrenheit(25)
 77.0
+>>> gpt.random_plate_number(seed=123)
+BIC6410
 ```
 
 ## Show me the generated code

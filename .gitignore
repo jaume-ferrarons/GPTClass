@@ -5,3 +5,5 @@ dist
 .venv
 .DS_Store
 notebooks
+.coverage
+coverage.xml
